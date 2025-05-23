@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TrocaFácil - Trocas seguras entre pessoas</title>
+
+  <!-- Fonte Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
+
   <style>
     /* Reset básico */
     * {
@@ -12,49 +16,68 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #fff8f3; /* fundo clarinho quente */
-      color: #4a3c31; /* cinza escuro quente */
+      background: #fff8f3;
+      color: #4a3c31;
       line-height: 1.6;
       padding: 20px 0;
     }
 
     header {
-      background-color: #e07a5f; /* terracota suave */
+      background-color: #c75b39; /* terracota mais escuro que o bloco */
       color: #fff;
       padding: 25px 20px;
       text-align: center;
-      box-shadow: 0 3px 8px rgba(224,122,95,0.3);
+      box-shadow: 0 3px 8px rgba(199, 91, 57, 0.3);
       position: sticky;
       top: 0;
       z-index: 1000;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      letter-spacing: 2px;
     }
 
     nav {
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
     nav a {
       margin: 0 18px;
-      color: #f7ede2; /* off-white suave */
+      color: #f7ede2;
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s ease;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 0.7px;
     }
 
     nav a:hover {
-      color: #fff3e6; /* tom mais claro no hover */
+      color: #fff3e6;
     }
 
     section {
       padding: 50px 20px;
       max-width: 900px;
-      margin: auto;
-      background: #fff3eb; /* fundo levemente rosado */
+      margin: 40px auto;
+      background: #fff3eb;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(224,122,95,0.1);
-      margin-bottom: 40px;
+      box-shadow: 0 8px 20px rgba(224, 122, 95, 0.1);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .hero {
@@ -63,7 +86,16 @@
       background: linear-gradient(135deg, #e07a5f 0%, #d86f4a 100%);
       color: #fff8f3;
       border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(224,122,95,0.3);
+      box-shadow: 0 10px 30px rgba(224, 122, 95, 0.3);
+      margin-top: 0;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
+    }
+
+    .hero.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .hero h1 {
@@ -83,7 +115,7 @@
     }
 
     .btn {
-      background-color: #f2a365; /* pêssego vibrante */
+      background-color: #f2a365;
       color: white;
       padding: 14px 32px;
       border: none;
@@ -91,13 +123,18 @@
       cursor: pointer;
       font-size: 1.1rem;
       font-weight: 700;
-      box-shadow: 0 5px 15px rgba(242,163,101,0.4);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(242, 163, 101, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+      display: inline-block;
+      user-select: none;
     }
 
-    .btn:hover {
+    .btn:hover,
+    .btn:focus {
       background-color: #d98c4b;
-      box-shadow: 0 7px 20px rgba(217,140,75,0.6);
+      box-shadow: 0 7px 20px rgba(217, 140, 75, 0.6);
+      transform: scale(1.05);
+      outline: none;
     }
 
     h2 {
@@ -121,9 +158,14 @@
       border-radius: 8px;
       font-size: 1.1rem;
       color: #6f4a3e;
-      box-shadow: 0 2px 6px rgba(224,122,95,0.1);
+      box-shadow: 0 2px 6px rgba(224, 122, 95, 0.1);
       display: flex;
       align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    ul li:hover {
+      transform: translateX(8px);
     }
 
     ul li::before {
@@ -201,7 +243,7 @@
 </head>
 <body>
   <header>
-    <h1>TrocaFácil</h1>
+    TrocaFácil
     <nav>
       <a href="#como-funciona">Como Funciona</a>
       <a href="#seguranca">Segurança</a>
@@ -212,10 +254,12 @@
   <section class="hero">
     <h1>Troque com confiança. Receba com segurança.</h1>
     <p>Intermediação segura entre os usuários para garantir trocas justas e confiáveis.</p>
-    <button class="btn" onclick="document.getElementById('cadastro').scrollIntoView()">Cadastre-se na lista de espera</button>
+    <button class="btn" onclick="document.getElementById('cadastro').scrollIntoView({behavior:'smooth'})">
+      Cadastre-se na lista de espera
+    </button>
   </section>
 
-  <section id="como-funciona">
+  <section id="como-funciona" class="anim-section">
     <h2>Como Funciona</h2>
     <ul>
       <li>1. Anuncie um produto que você não usa mais</li>
@@ -227,7 +271,7 @@
     </ul>
   </section>
 
-  <section id="seguranca">
+  <section id="seguranca" class="anim-section">
     <h2>Segurança e Garantias</h2>
     <ul>
       <li>📦 Conferência de todos os itens antes da troca</li>
@@ -237,7 +281,7 @@
     </ul>
   </section>
 
-  <section id="cadastro">
+  <section id="cadastro" class="anim-section">
     <h2>Seja um dos primeiros</h2>
     <p>Cadastre-se para receber novidades e saber quando o TrocaFácil chega na sua cidade.</p>
     <form>
@@ -250,5 +294,24 @@
     <p>© 2025 TrocaFácil. Todos os direitos reservados.</p>
     <p>Termos de uso | Política de privacidade</p>
   </footer>
+
+  <script>
+    // Animar seções quando entram na viewport
+    const sections = document.querySelectorAll('section.anim-section');
+    const hero = document.querySelector('.hero');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    sections.forEach(section => observer.observe(section));
+    if(hero) observer.observe(hero);
+  </script>
 </body>
 </html>
