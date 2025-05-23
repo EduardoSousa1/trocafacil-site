@@ -1,205 +1,203 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TrocaFácil - Trocas seguras entre pessoas</title>
   <style>
-  /* Reset básico */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-    padding: 20px 0;
-  }
-
-  header {
-    background-color: #0078d7;
-    color: #fff;
-    padding: 25px 20px;
-    text-align: center;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
-  nav {
-    margin-top: 10px;
-  }
-
-  nav a {
-    margin: 0 18px;
-    color: #dbe9ff;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
-
-  nav a:hover {
-    color: #fff;
-  }
-
-  section {
-    padding: 50px 20px;
-    max-width: 900px;
-    margin: auto;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
-    margin-bottom: 40px;
-  }
-
-  .hero {
-    text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #2a7be4 0%, #005ea2 100%);
-    color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(42,123,228,0.3);
-  }
-
-  .hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 15px;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-
-  .hero p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-    font-weight: 400;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .btn {
-    background-color: #ff7a00;
-    color: white;
-    padding: 14px 32px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 700;
-    box-shadow: 0 5px 15px rgba(255,122,0,0.4);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .btn:hover {
-    background-color: #e16f00;
-    box-shadow: 0 7px 20px rgba(225,111,0,0.6);
-  }
-
-  h2 {
-    color: #222;
-    margin-bottom: 25px;
-    font-weight: 700;
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  ul {
-    list-style: none;
-    max-width: 600px;
-    margin: auto;
-  }
-
-  ul li {
-    background: #f0f4ff;
-    margin-bottom: 12px;
-    padding: 14px 20px;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    color: #333;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    display: flex;
-    align-items: center;
-  }
-
-  ul li::before {
-    content: '✔️';
-    margin-right: 10px;
-  }
-
-  #como-funciona ul li::before {
-    content: '';
-    margin-right: 0;
-  }
-
-  form {
-    text-align: center;
-    margin-top: 15px;
-  }
-
-  input[type="email"] {
-    padding: 12px 15px;
-    width: 280px;
-    max-width: 90%;
-    border: 2px solid #ddd;
-    border-radius: 8px 0 0 8px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-  }
-
-  input[type="email"]:focus {
-    outline: none;
-    border-color: #ff7a00;
-  }
-
-  form button.btn {
-    border-radius: 0 8px 8px 0;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-weight: 700;
-  }
-
-  footer {
-    background-color: #222;
-    color: #aaa;
-    text-align: center;
-    padding: 25px 20px;
-    font-size: 0.9rem;
-  }
-
-  footer p {
-    margin-bottom: 6px;
-  }
-
-  @media (max-width: 600px) {
-    .hero h1 {
-      font-size: 2rem;
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .hero p {
-      font-size: 1rem;
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px 0;
     }
+
+    header {
+      background-color: #0078d7;
+      color: #fff;
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
     nav a {
-      margin: 0 10px;
-      font-size: 0.95rem;
+      margin: 0 18px;
+      color: #dbe9ff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
-    input[type="email"] {
-      width: 100%;
-      border-radius: 8px 8px 0 0;
-      margin-bottom: 8px;
-    }
-    form button.btn {
-      width: 100%;
-      border-radius: 0 0 8px 8px;
-      padding: 14px 0;
-    }
-  }
-</style>
 
+    nav a:hover {
+      color: #fff;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+      margin-bottom: 40px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #2a7be4 0%, #005ea2 100%);
+      color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(42,123,228,0.3);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      font-weight: 400;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      background-color: #ff7a00;
+      color: white;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 700;
+      box-shadow: 0 5px 15px rgba(255,122,0,0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e16f00;
+      box-shadow: 0 7px 20px rgba(225,111,0,0.6);
+    }
+
+    h2 {
+      color: #222;
+      margin-bottom: 25px;
+      font-weight: 700;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    ul li {
+      background: #f0f4ff;
+      margin-bottom: 12px;
+      padding: 14px 20px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      color: #333;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+    }
+
+    ul li::before {
+      content: '✔️';
+      margin-right: 10px;
+    }
+
+    #como-funciona ul li::before {
+      content: '';
+      margin-right: 0;
+    }
+
+    form {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    input[type="email"] {
+      padding: 12px 15px;
+      width: 280px;
+      max-width: 90%;
+      border: 2px solid #ddd;
+      border-radius: 8px 0 0 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="email"]:focus {
+      outline: none;
+      border-color: #ff7a00;
+    }
+
+    form button.btn {
+      border-radius: 0 8px 8px 0;
+      padding-left: 30px;
+      padding-right: 30px;
+      font-weight: 700;
+    }
+
+    footer {
+      background-color: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 25px 20px;
+      font-size: 0.9rem;
+    }
+
+    footer p {
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      nav a {
+        margin: 0 10px;
+        font-size: 0.95rem;
+      }
+      input[type="email"] {
+        width: 100%;
+        border-radius: 8px 8px 0 0;
+        margin-bottom: 8px;
+      }
+      form button.btn {
+        width: 100%;
+        border-radius: 0 0 8px 8px;
+        padding: 14px 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -211,46 +209,4 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Troque com confiança. Receba com segurança.</h1>
-    <p>Intermediação segura entre os usuários para garantir trocas justas e confiáveis.</p>
-    <button class="btn" onclick="document.getElementById('cadastro').scrollIntoView()">Cadastre-se na lista de espera</button>
-  </section>
-
-  <section id="como-funciona">
-    <h2>Como Funciona</h2>
-    <ul>
-      <li>1. Anuncie um produto que você não usa mais</li>
-      <li>2. Receba propostas de troca de outros usuários</li>
-      <li>3. Ao aceitar, envie o item para o centro TrocaFácil</li>
-      <li>4. Conferimos os dois produtos</li>
-      <li>5. Enviamos para os respectivos novos donos</li>
-      <li>6. Confirmação e avaliação da troca</li>
-    </ul>
-  </section>
-
-  <section id="seguranca">
-    <h2>Segurança e Garantias</h2>
-    <ul>
-      <li>📦 Conferência de todos os itens antes da troca</li>
-      <li>✅ Envio apenas quando os dois produtos forem confirmados</li>
-      <li>🛡️ Sistema antifraude e verificação de reputação</li>
-      <li>📮 Rastreamento dos envios</li>
-    </ul>
-  </section>
-
-  <section id="cadastro">
-    <h2>Seja um dos primeiros</h2>
-    <p>Cadastre-se para receber novidades e saber quando o TrocaFácil chega na sua cidade.</p>
-    <form>
-      <input type="email" placeholder="Seu e-mail" required style="padding: 10px; width: 250px;">
-      <button type="submit" class="btn">Cadastrar</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>© 2025 TrocaFácil. Todos os direitos reservados.</p>
-    <p>Termos de uso | Política de privacidade</p>
-  </footer>
-</body>
-</html>
+  <section class="hero"
